@@ -42,7 +42,6 @@ function buildCss() {
         .pipe(gulp.dest("public/dist/css"));
 }
 
-
 //Rotinas
 exports.startProject = createDist;
 exports.rollbackProject = deleteDist;
