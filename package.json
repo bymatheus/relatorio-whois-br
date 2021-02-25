@@ -13,7 +13,16 @@
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
+        "postcss": "^8.1.14",
+        "node-sass": "^4.14.1",
+        "gulp": "^4.0.2",
+        "gulp-clean": "^0.4.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^4.1.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-uglify": "^3.0.2"
     },
     "dependencies": {
         "@popperjs/core": "^2.6.0",
