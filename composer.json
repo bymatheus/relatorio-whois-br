@@ -1,14 +1,22 @@
 {
-    "name": "laravel/laravel",
+    "name": "mplusc/whois",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Projeto que consulta dados do Whois de um site/lote de sites, e gera relatórios.",
+    "authors": [
+        {
+            "name": "Matheus C Xavier",
+            "email": "oi@matheuscamargo.co",
+            "homepage": "https://www.matheuscamargo.co",
+            "role": "Developer"
+        }
+    ],
     "keywords": [
         "framework",
         "laravel"
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^8.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
