@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  postgres-compose:
+    image: postgres
+    container_name: whois-postgre
+    environment:
+      POSTGRES_PASSWORD: "12345678"
+    ports:
+      - "15432:5432"
+    volumes:
+      - ./sql:/var/lib/postgresql/data
+    networks:
+      - whois-network
+
+  pgadmin-compose:
+    image: dpage/pgadmin4
+    container_name: whois-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "teste@teste.com"
+      PGADMIN_DEFAULT_PASSWORD: "12345678"
+    ports:
+      - "16543:20"
+    depends_on:
+      - postgres-compose
+    networks:
+      - whois-network
+
+  server:
+    build:
+      context: .
+      dockerfile: docker/dockerfile
+    image: php-8-composer/server
+    container_name: whois-server
+    ports:
+      - "8080:8080"
+    networks:
+      - whois-network
+    volumes:
+      - ".:/var/www/html/"
+    command: php -S 0.0.0.0:8080 -t public/
+    depends_on:
+      - pgadmin-compose
+
+networks:
+  whois-network:
+    driver: bridge
